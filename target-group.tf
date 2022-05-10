@@ -4,7 +4,7 @@ resource "aws_alb_target_group" "this" {
   port                 = 80
   protocol             = "HTTP"
   vpc_id               = var.vpc_id
-  target_type          = "ip"
+  target_type          = lookup(var.target_group, "target_type", "instance")
   tags                 = var.tags
   deregistration_delay = lookup(var.target_group, "deregistration_delay", "300")
 
