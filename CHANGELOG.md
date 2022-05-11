@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.1](https://github.com/ganexcloud/terraform-aws-ecs-service/compare/v1.0.0...v1.0.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* Make targetgroup_target_type configurable ([6ad0ba5](https://github.com/ganexcloud/terraform-aws-ecs-service/commit/6ad0ba568a4073120a7b40ccb316b7be64cb8edc))
+
 ## 1.0.0 (2022-05-05)
 
 
