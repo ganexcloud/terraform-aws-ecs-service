@@ -22,7 +22,6 @@ resource "aws_iam_role" "ecs_service" {
   tags                 = var.role_tags_enabled ? var.tags : null
 }
 
-
 resource "aws_iam_role_policy" "ecs_service" {
   count  = local.enable_ecs_service_role && var.service_role_arn == null ? 1 : 0
   name   = local.full_name

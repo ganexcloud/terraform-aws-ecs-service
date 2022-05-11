@@ -496,3 +496,21 @@ variable "target_group" {
   description = "(Optional) Provides a Target Group resource for use with Load Balancer resources."
   default     = {}
 }
+
+variable "http_listener_rules" {
+  description = "A list of maps describing the HTTP Listener Rules."
+  type        = any
+  default     = []
+}
+
+variable "https_listener_rules" {
+  description = "A list of maps describing the HTTPS Listener Rules."
+  type        = any
+  default     = []
+}
+
+variable "https_listener_certificates" {
+  type        = list(map(string))
+  description = "A list of maps describing SSL certificates to apply to the HTTPS listeners"
+  default     = []
+}
