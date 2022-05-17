@@ -186,6 +186,18 @@ variable "network_mode" {
   default     = "awsvpc"
 }
 
+variable "cpu" {
+  type        = number
+  description = " (Optional) Number of cpu units used by the task. If the requires_compatibilities is FARGATE this field is required."
+  default     = null
+}
+
+variable "memory" {
+  type        = number
+  description = "(Optional) Amount (in MiB) of memory used by the task. If the requires_compatibilities is FARGATE this field is required."
+  default     = null
+}
+
 variable "task_exec_role_arn" {
   type        = any
   description = <<-EOT

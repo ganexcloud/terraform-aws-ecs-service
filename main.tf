@@ -117,6 +117,8 @@ resource "aws_security_group_rule" "nlb" {
 ## Task Definition
 resource "aws_ecs_task_definition" "this" {
   count                    = var.enabled && var.task_definition == null ? 1 : 0
+  cpu                      = var.cpu
+  memory                   = var.memory
   family                   = local.full_name
   container_definitions    = var.container_definition_json
   requires_compatibilities = [var.launch_type]
