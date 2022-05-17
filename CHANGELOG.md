@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.1.1](https://github.com/ganexcloud/terraform-aws-ecs-service/compare/v1.1.0...v1.1.1) (2022-05-17)
+
+
+### Bug Fixes
+
+* Add support to service cpu/memory ([535da01](https://github.com/ganexcloud/terraform-aws-ecs-service/commit/535da01bfcd680494aed21d2ba7eda33d7f863bf))
+
 ## [1.1.0](https://github.com/ganexcloud/terraform-aws-ecs-service/compare/v1.0.1...v1.1.0) (2022-05-11)
 
 
