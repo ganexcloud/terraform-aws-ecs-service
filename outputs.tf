@@ -1,11 +1,11 @@
 output "ecs_exec_role_policy_id" {
   description = "The ECS service role policy ID, in the form of `role_name:role_policy_name`"
-  value       = join("", aws_iam_role_policy.ecs_exec.*.id)
+  value       = aws_iam_role_policy.ecs_exec[0].id
 }
 
 output "ecs_exec_role_policy_name" {
   description = "ECS service role name"
-  value       = join("", aws_iam_role_policy.ecs_exec.*.name)
+  value       = aws_iam_role_policy.ecs_exec[0].name
 }
 
 output "service_name" {
@@ -20,70 +20,70 @@ output "service_arn" {
 
 output "service_role_arn" {
   description = "ECS Service role ARN"
-  value       = join("", aws_iam_role.ecs_service.*.arn)
+  value       = aws_iam_role.ecs_service[0].arn
 }
 
 output "task_exec_role_name" {
   description = "ECS Task role name"
-  value       = join("", aws_iam_role.ecs_exec.*.name)
+  value       = aws_iam_role.ecs_exec[0].name
 }
 
 output "task_exec_role_arn" {
   description = "ECS Task exec role ARN"
-  value       = length(local.task_exec_role_arn) > 0 ? local.task_exec_role_arn : join("", aws_iam_role.ecs_exec.*.arn)
+  value       = length(local.task_exec_role_arn) > 0 ? local.task_exec_role_arn : aws_iam_role.ecs_exec[0].arn
 }
 
 output "task_exec_role_id" {
   description = "ECS Task exec role id"
-  value       = join("", aws_iam_role.ecs_exec.*.unique_id)
+  value       = aws_iam_role.ecs_exec[0].unique_id
 }
 
 output "task_role_name" {
   description = "ECS Task role name"
-  value       = join("", aws_iam_role.ecs_task.*.name)
+  value       = aws_iam_role.ecs_task[0].name
 }
 
 output "task_role_arn" {
   description = "ECS Task role ARN"
-  value       = length(local.task_role_arn) > 0 ? local.task_role_arn : join("", aws_iam_role.ecs_task.*.arn)
+  value       = length(local.task_role_arn) > 0 ? local.task_role_arn : aws_iam_role.ecs_task[0].arn
 }
 
 output "task_role_id" {
   description = "ECS Task role id"
-  value       = join("", aws_iam_role.ecs_task.*.unique_id)
+  value       = aws_iam_role.ecs_task[0].unique_id
 }
 
 output "service_security_group_id" {
   description = "Security Group ID of the ECS task"
-  value       = join("", aws_security_group.ecs_service.*.id)
+  value       = aws_security_group.ecs_service[0].id
 }
 
 output "task_definition_family" {
   description = "ECS task definition family"
-  value       = join("", aws_ecs_task_definition.this.*.family)
+  value       = aws_ecs_task_definition.this[0].family
 }
 
 output "task_definition_revision" {
   description = "ECS task definition revision"
-  value       = join("", aws_ecs_task_definition.this.*.revision)
+  value       = aws_ecs_task_definition.this[0].revision
 }
 
 output "task_definition_arn" {
   description = "ECS task definition ARN"
-  value       = join("", aws_ecs_task_definition.this.*.arn)
+  value       = aws_ecs_task_definition.this[0].arn
 }
 
 output "alb_target_group_arn" {
   description = "ECS task definition family"
-  value       = join("", aws_alb_target_group.this.*.arn)
+  value       = aws_alb_target_group.this[0].arn
 }
 
 output "scale_up_policy_arn" {
   description = "ARN of the scale up policy"
-  value       = join("", aws_appautoscaling_policy.up.*.arn)
+  value       = aws_appautoscaling_policy.up[0].arn
 }
 
 output "scale_down_policy_arn" {
   description = "ARN of the scale down policy"
-  value       = join("", aws_appautoscaling_policy.down.*.arn)
+  value       = aws_appautoscaling_policy.down[0].arn
 }
