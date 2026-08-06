@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2](https://github.com/ganexcloud/terraform-aws-ecs-service/compare/v1.1.1...v1.1.2) (2026-08-06)
+
+### Bug Fixes
+
+* **ci:** pin terraform-docs image ([279e80d](https://github.com/ganexcloud/terraform-aws-ecs-service/commit/279e80dcfc599afb7a0f8f05394b15b7c667163b))
+* **docs:** align provider version ([180917b](https://github.com/ganexcloud/terraform-aws-ecs-service/commit/180917b7ad43c7a51cb0bb892a2e49fee2954038))
+
 ### [1.1.1](https://github.com/ganexcloud/terraform-aws-ecs-service/compare/v1.1.0...v1.1.1) (2022-05-17)
 
 
