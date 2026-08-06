@@ -199,7 +199,7 @@ resource "aws_ecs_task_definition" "this" {
 
 ## ECS Service
 resource "aws_ecs_service" "ignore_changes_task_definition" {
-  count                              = var.enabled && var.ignore_changes_task_definition && !var.ignore_changes_desired_count ? 1 : 0
+  count                              = var.enabled && var.ignore_changes_task_definition && ! var.ignore_changes_desired_count ? 1 : 0
   name                               = local.full_name
   task_definition                    = "${aws_ecs_task_definition.this[0].family}:${max(aws_ecs_task_definition.this[0].revision, data.aws_ecs_task_definition.this.revision)}"
   desired_count                      = var.desired_count
@@ -379,7 +379,7 @@ resource "aws_ecs_service" "ignore_changes_task_definition_and_desired_count" {
 }
 
 resource "aws_ecs_service" "ignore_changes_desired_count" {
-  count                              = var.enabled && !var.ignore_changes_task_definition && var.ignore_changes_desired_count ? 1 : 0
+  count                              = var.enabled && ! var.ignore_changes_task_definition && var.ignore_changes_desired_count ? 1 : 0
   name                               = local.full_name
   task_definition                    = "${aws_ecs_task_definition.this[0].family}:${max(aws_ecs_task_definition.this[0].revision, data.aws_ecs_task_definition.this.revision)}"
   desired_count                      = var.desired_count
@@ -469,7 +469,7 @@ resource "aws_ecs_service" "ignore_changes_desired_count" {
 }
 
 resource "aws_ecs_service" "default" {
-  count                              = var.enabled && !var.ignore_changes_task_definition && !var.ignore_changes_desired_count ? 1 : 0
+  count                              = var.enabled && ! var.ignore_changes_task_definition && ! var.ignore_changes_desired_count ? 1 : 0
   name                               = local.full_name
   task_definition                    = "${aws_ecs_task_definition.this[0].family}:${max(aws_ecs_task_definition.this[0].revision, data.aws_ecs_task_definition.this.revision)}"
   desired_count                      = var.desired_count
