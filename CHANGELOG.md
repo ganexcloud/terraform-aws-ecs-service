@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.3](https://github.com/ganexcloud/terraform-aws-ecs-service/compare/v1.1.2...v1.1.3) (2026-08-17)
+
+### Bug Fixes
+
+* guard optional resource outputs ([12b8694](https://github.com/ganexcloud/terraform-aws-ecs-service/commit/12b869429ab61a6a02e467e7463f66214c0c4c18))
+
 ## [1.1.2](https://github.com/ganexcloud/terraform-aws-ecs-service/compare/v1.1.1...v1.1.2) (2026-08-06)
 
 ### Bug Fixes
